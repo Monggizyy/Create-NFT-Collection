@@ -1,0 +1,57 @@
+// create a variable to hold your NFT's
+const nftCollection = [];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(name, gender, type, expression, hair, eyes, smoking, smoke,  clothing, background, image) {
+  const nft = {
+    name: name,
+    gender: gender,
+    type: type,
+    expression,
+    hair: hair,
+    eyes: eyes,
+    smoking: smoking,
+    smoke: smoke,
+    clothing: clothing,
+    background: background,
+    image: image
+  };
+
+  nftCollection.push(nft);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs() {
+  for (let i = 0; i < nftCollection.length; i++) {
+    const nft = nftCollection[i];
+    console.log("NFT Name: " + nft.name);
+    console.log("--------Attributes--------");
+    console.log("Gender: " + nft.gender);
+    console.log("Type: " + nft.type);
+    console.log("Expression: " + nft.expression);
+    console.log("hair: " + nft.hair);
+    console.log("eyes: " + nft.eyes);
+    console.log("Smoking: " + nft.smoking);
+    console.log("Smoke: " + nft.smoke);
+    console.log("Clothing: " + nft.clothing);
+    console.log("Background: " + nft.background);
+    console.log("Image: " + nft.image);
+    console.log("--------");
+  }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+  return nftCollection.length;
+}
+
+// call your functions below this line
+// Mint some NFTs
+mintNFT("Mad Lads", "Male", "Light", "Shocked", "Grease", "Brown", "Cigarette", "White", "Poncho", "Orange","NFT#7742.png");
+mintNFT("Mad Lads", "Male", "Light", "Smile", "Punk", "Possessed", "None", "None", "Fancy Overall", "Purple","NFT#8172.png");
+mintNFT("Mad Lads", "Male", "Light", "Van Gogh", "White Beard", "Van Gogh", "Pipe", "Van Gogh", "Black Coat", "Yellow","NFT#1264.png");
+listNFTs();
+console.log("Total Supply: " + getTotalSupply());
